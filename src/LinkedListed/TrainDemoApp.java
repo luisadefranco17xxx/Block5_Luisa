@@ -4,9 +4,13 @@ public class TrainDemoApp {
     public static void main(String[] args) {
 
         LinkedList linkedList=new LinkedList();
+
         linkedList.add(5);
         linkedList.add(566);
         linkedList.add(27);
+        linkedList.add(5);
+        linkedList.add(567);
+        linkedList.add(28);
 
         linkedList.printAllNodes();
         System.out.println("contain" + linkedList.contains(566));

@@ -24,7 +24,7 @@ public class ExampleswithArrayClassApp {
 
     }
 
-    // TODO 1: Write a method, finding and returning the smallest number
+    // Write a method, finding and returning the smallest number
     public static int findSmallestNumber(int[] arr){
         int keep = arr[0];
 
@@ -36,7 +36,7 @@ public class ExampleswithArrayClassApp {
         return keep;
     }
 
-    // TODO 2: Write a method, finding and returning the biggest number
+    //  Write a method, finding and returning the biggest number
 
     public static int findBiggestNumber(int[] arr){
         int keep = arr[0];
@@ -47,7 +47,7 @@ public class ExampleswithArrayClassApp {
         }
         return keep;
     }
-    // TODO 3: Write a method, calculating and returning the sum of all numbers with a while loop
+    // Write a method, calculating and returning the sum of all numbers with a while loop
     public static int findSumm(int[] arr) {
         int summ=0;
         for (int i = 0; i < arr.length; i++) {
@@ -56,7 +56,7 @@ public class ExampleswithArrayClassApp {
         return summ;
     }
 
-    // TODO 4: Write a method, calculating and returning the average over all numbers
+    // Write a method, calculating and returning the average over all numbers
     public static int findAverage(int[] arr){
         int summ=0, average=0;
         int totNumber = arr.length;
@@ -69,7 +69,7 @@ public class ExampleswithArrayClassApp {
         return summ/totNumber;
     }
 
-    // TODO 5 (complicated): Write a method, which returns an array with duplicated numbers (81, 51)
+    //  (complicated): Write a method, which returns an array with duplicated numbers (81, 51)
     public static int[] findDuplicatedInArray(int[] arr){
         int[] myArr=new int[arr.length/2];
         int z=0;
@@ -85,7 +85,7 @@ public class ExampleswithArrayClassApp {
     }
     
 
-    // TODO 6: Write a method, to calculate the average over all values (think about datatype)
+    //  Write a method, to calculate the average over all values (think about datatype)
     public static int findValueAverage(int[] arr){
     int summ=0, average=0;
         for (int i = 0; i < arr.length; i++) {
@@ -93,7 +93,7 @@ public class ExampleswithArrayClassApp {
          }
         return summ/arr.length;
     }
-    // TODO 7: Write a method, which replaces one number by a new new number => public static void replace(int searchNumber, int newNumber)
+    //  7: Write a method, which replaces one number by a new new number => public static void replace(int searchNumber, int newNumber)
     public static void replace(int[] arr, int searchNumber, int newNumber){
         int[] myArrayIndex=findIndexNumber(arr,searchNumber);
         for (int i = 0; i < myArrayIndex.length; i++) {
@@ -120,7 +120,7 @@ public class ExampleswithArrayClassApp {
         System.out.println("Arrays.toString(myArrayIndex) = " + Arrays.toString(myArrayIndex));
         return myArrayIndex;
     }
-    // TODO 8 (complicated): Write a method which extends an array by one number. You need to create a new array with a length + 1 and copy existing values to array and add the new number at end
+    // 8 (complicated): Write a method which extends an array by one number. You need to create a new array with a length + 1 and copy existing values to array and add the new number at end
 
     public static int[] extendsArray(int[] arr,int number) {
         int[] myArray=new int[arr.length+1];

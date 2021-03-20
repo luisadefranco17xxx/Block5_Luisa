@@ -49,7 +49,7 @@ public class LinkedList {
         // 37 auf 58
         Node current = first;
         int index = 1;
-        position = position - 1;
+        position = position - 1;   //weil wir etwas ein Platz vorher unternehmen sollen (den Link verarbeiten)
         if (position == 0)
         {
             first = first.next;
@@ -57,11 +57,11 @@ public class LinkedList {
         }
         else {
             while (current != null) {
-                if (position == index) {
+                if (position == index) {   //wir sind ein Platz vorher
                     // hier müssen wir was tun
                     // current = 37 // current.next = 19
                     Node deleteNode = current.next; // 19
-                    current.next = deleteNode.next; /* current.next (19).next (58) */
+                    current.next = deleteNode.next; /* current.next (19)  delete.next (58)   devo caricare in current.next in valore giusto */
 
                     deleteNode.next = null; // damit unser node nicht mehr auf den nächsten zeigt
 
@@ -114,35 +114,42 @@ public class LinkedList {
 
     }
 
-    public void addElement(int position, int value){
+    // einfügen an bestimmter stelle
+    public void addElement(int position, int value) {
         Node newWagon = new Node();
+        newWagon.value = value;
 
-        Node altCurrent;
-         //if List==null
-        newWagon.value =value;
-        Node current = first;
-        altCurrent=current;
-        int index=1;
-        position =position-1;
-        while (current!=null){
-            if(position==0){
-                first=newWagon;
-                newWagon.next=current;
-            }
-            if(position==index){
-                altCurrent=current.next;
-                current.next=newWagon;
-                newWagon.next=altCurrent;
+        if (first == null) {
+            // we have an empty train
+            first = newWagon;
+            last = newWagon;
+            return;
+        }
+
+        Node current = first;             // sind wir am Anfang?
+        int index = 1;                    // Element einfügen - neu verketten
+        position = position - 1;
+        if (position == 0) {
+            first = newWagon;
+            newWagon.next = current;
+            return; // our work is done
+        }
+        while (current != null){
+            if (position == index) {
+                Node next = current.next;   // 37
+                current.next = newWagon;
+                newWagon.next = next;
+                if (current == last) { //
+                    //last.next = newWagon;
+                    last = newWagon;
+                }
                 break;
             }
-               if (current==last){
-                   last = newWagon;
-              }
-            }
-            current=current.next;
+            current = current.next;
             index++;
-
+        }
     }
+
     public void changeValue(int position, int newVaue){
         Node current = first;
         int index = 1;
